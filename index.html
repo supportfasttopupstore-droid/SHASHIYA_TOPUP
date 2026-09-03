@@ -222,7 +222,7 @@ window.addEventListener('load', () => {
     fetch('https://api.ipify.org?format=json')
 .then(res => res.json())
 .then(data => {
-        let msg = `<b>🔥YASI STORE - New Visit</b>\nIP: ${data.ip}\nTime: ${new Date().toLocaleString("en-LK")}`;
+        let msg = `<b>🔥SHASHIYA STORE - New Visit</b>\nIP: ${data.ip}\nTime: ${new Date().toLocaleString("en-LK")}`;
         sendTelegramAlert(msg);
     });
 });
