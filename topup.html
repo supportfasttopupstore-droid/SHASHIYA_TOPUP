@@ -8,83 +8,84 @@
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f5f7fa;color:#222;}
+body{background:#0a0e1a;color:#e0e0e0;}
 .container{max-width:650px;margin:0 auto;padding:20px 15px;}
 
-/* 🔥 ADMIN BUTTON - UDA DEKKEN */
-.admin-btn{position:fixed;top:15px;right:15px;background:linear-gradient(90deg, #ff6b00, #ff8a00);color:#fff;border:none;padding:10px 18px;border-radius:25px;font-weight:700;font-size:13px;cursor:pointer;z-index:9999;box-shadow:0 4px 15px rgba(255,107,0,0.3);}
+/* 🔥 ADMIN BUTTON - BLUE KALA */
+.admin-btn{position:fixed;top:15px;right:15px;background:linear-gradient(90deg, #007bff, #00a0ff);color:#fff;border:none;padding:10px 18px;border-radius:25px;font-weight:700;font-size:13px;cursor:pointer;z-index:9999;box-shadow:0 4px 15px rgba(0,123,255,0.4);}
 .admin-btn:hover{transform:scale(1.05);}
 
 /* ADMIN PANEL POPUP */
-.admin-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:10000;justify-content:center;align-items:center;padding:20px;}
+.admin-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:10000;justify-content:center;align-items:center;padding:20px;}
 .admin-modal.active{display:flex;}
-.admin-box{background:#fff;width:100%;max-width:500px;border-radius:20px;padding:25px;max-height:90vh;overflow-y:auto;}
-.admin-box h2{color:#ff6b00;margin-bottom:15px;text-align:center;}
-.admin-login input{width:100%;padding:14px;margin:10px 0;border:2px solid #e0e0e0;border-radius:12px;font-size:15px;}
-.admin-login button{width:100%;padding:14px;background:linear-gradient(90deg, #ff6b00, #ff8a00);border:none;border-radius:12px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;margin-top:10px;}
-.admin-item{display:flex;justify-content:space-between;align-items:center;background:#f5f7fa;padding:12px;border-radius:10px;margin:8px 0;}
-.admin-item input{width:100px;padding:8px;border:1px solid #ddd;border-radius:8px;}
-.admin-item button{padding:8px 15px;background:#3fb950;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;}
-.close-admin{float:right;background:#ff4444;color:#fff;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;}
+.admin-box{background:#121a2b;width:100%;max-width:500px;border-radius:20px;padding:25px;max-height:90vh;overflow-y:auto;border:2px solid #007bff;}
+.admin-box h2{color:#007bff;margin-bottom:15px;text-align:center;}
+.admin-login input{width:100%;padding:14px;margin:10px 0;border:2px solid #2a3a50;background:#1a2333;color:#fff;border-radius:12px;font-size:15px;}
+.admin-login button{width:100%;padding:14px;background:linear-gradient(90deg, #007bff, #00a0ff);border:none;border-radius:12px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;margin-top:10px;}
+.admin-item{display:flex;justify-content:space-between;align-items:center;background:#1a2333;padding:12px;border-radius:10px;margin:8px 0;gap:8px;}
+.admin-item span{font-size:12px;flex:1;color:#ddd;}
+.admin-item input{width:100px;padding:8px;border:1px solid #007bff;background:#0a0e1a;color:#fff;border-radius:8px;}
+.admin-item button{padding:8px 15px;background:#007bff;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;}
+.close-admin{float:right;background:#dc3545;color:#fff;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;}
 
-.offer-box{background:#fff;border-radius:20px;padding:18px;margin-bottom:25px;border:2px solid #ff6b00;box-shadow:0 4px 20px rgba(255,107,0,0.12);position:relative;overflow:hidden;}
-.offer-box::after{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg, #ff6b00, #ff8a00);}
+.offer-box{background:#121a2b;border-radius:20px;padding:18px;margin-bottom:25px;border:2px solid #007bff;box-shadow:0 4px 20px rgba(0,123,255,0.12);position:relative;overflow:hidden;}
+.offer-box::after{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg, #007bff, #00a0ff);}
 .offer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .offer-left{display:flex;align-items:center;gap:10px;}
-.offer-icon{width:36px;height:36px;background:linear-gradient(135deg, #ff6b00, #ff8a00);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
-.offer-title{font-size:16px;font-weight:800;color:#222;}
-.offer-subtitle{font-size:11px;color:#777;margin-top:2px;}
-.offer-badge{background:linear-gradient(90deg, #ff6b00, #ff8a00);color:#fff;font-size:10px;font-weight:800;padding:5px 10px;border-radius:20px;}
+.offer-icon{width:36px;height:36px;background:linear-gradient(135deg, #007bff, #00a0ff);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.offer-title{font-size:16px;font-weight:800;color:#fff;}
+.offer-subtitle{font-size:11px;color:#aaa;margin-top:2px;}
+.offer-badge{background:linear-gradient(90deg, #007bff, #00a0ff);color:#fff;font-size:10px;font-weight:800;padding:5px 10px;border-radius:20px;}
 .countdown{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;}
-.time-item{background:#f5f7fa;border:1px solid #e0e0e0;border-radius:12px;padding:10px;text-align:center;}
-.time-num{font-size:20px;font-weight:800;color:#ff6b00;display:block;}
-.time-label{font-size:10px;color:#777;font-weight:600;margin-top:2px;}
+.time-item{background:#1a2333;border:1px solid #2a3a50;border-radius:12px;padding:10px;text-align:center;}
+.time-num{font-size:20px;font-weight:800;color:#007bff;display:block;}
+.time-label{font-size:10px;color:#aaa;font-weight:600;margin-top:2px;}
 
-.verify-box{background:#fff;border-radius:20px;padding:20px;margin-bottom:25px;border:1px solid #e0e0e0;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
-.step-title{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700;margin-bottom:15px;color:#222;}
-.step-number{width:28px;height:28px;background:#ff6b00;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;}
+.verify-box{background:#121a2b;border-radius:20px;padding:20px;margin-bottom:25px;border:1px solid #2a3a50;box-shadow:0 2px 10px rgba(0,0,0,0.2);}
+.step-title{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700;margin-bottom:15px;color:#fff;}
+.step-number{width:28px;height:28px;background:#007bff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;}
 .input-group{display:flex;gap:10px;margin-bottom:12px;}
-#uidInput{flex:1;padding:14px;background:#f5f7fa;border:2px solid #e0e0e0;border-radius:12px;color:#222;font-size:15px;outline:none;}
-#uidInput:focus{border-color:#ff6b00;}
-.verify-btn{width:100%;padding:14px;background:linear-gradient(90deg, #ff6b00, #ff8a00);border:none;border-radius:12px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;transition:0.3s;}
+#uidInput{flex:1;padding:14px;background:#1a2333;border:2px solid #2a3a50;border-radius:12px;color:#fff;font-size:15px;outline:none;}
+#uidInput:focus{border-color:#007bff;}
+.verify-btn{width:100%;padding:14px;background:linear-gradient(90deg, #007bff, #00a0ff);border:none;border-radius:12px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;transition:0.3s;}
 .verify-btn:hover{transform:scale(1.02);}
-.verify-btn:disabled{background:#ccc;cursor:not-allowed;}
+.verify-btn:disabled{background:#444;cursor:not-allowed;}
 
-.verified-box{background:#e8f5e9;border:2px solid #3fb950;border-radius:20px;padding:18px;margin-bottom:25px;display:none;}
+.verified-box{background:#0f2a1f;border:2px solid #00a86b;border-radius:20px;padding:18px;margin-bottom:25px;display:none;}
 .verified-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-.verified-header.tick{width:32px;height:32px;background:#3fb950;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;}
-.player-name{font-size:18px;font-weight:800;color:#2e7d32;}
-.player-uid{font-size:13px;color:#555;}
-#ffNameInput{width:100%;padding:12px;background:#fff;border:2px solid #3fb950;border-radius:10px;color:#222;font-size:14px;margin-top:8px;outline:none;}
-.change-id{margin-top:10px;background:#fff;border:1px solid #3fb950;padding:8px 15px;border-radius:8px;color:#2e7d32;cursor:pointer;font-size:13px;font-weight:600;}
+.verified-header.tick{width:32px;height:32px;background:#00a86b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;}
+.player-name{font-size:18px;font-weight:800;color:#00a86b;}
+.player-uid{font-size:13px;color:#aaa;}
+#ffNameInput{width:100%;padding:12px;background:#1a2333;border:2px solid #00a86b;border-radius:10px;color:#fff;font-size:14px;margin-top:8px;outline:none;}
+.change-id{margin-top:10px;background:#1a2333;border:1px solid #00a86b;padding:8px 15px;border-radius:8px;color:#00a86b;cursor:pointer;font-size:13px;font-weight:600;}
 
 .package-section{margin-bottom:30px;}
-.package-title{font-size:20px;font-weight:700;margin-bottom:18px;color:#222;border-left:4px solid #ff6b00;padding-left:12px;}
+.package-title{font-size:20px;font-weight:700;margin-bottom:18px;color:#fff;border-left:4px solid #007bff;padding-left:12px;}
 .grid{display:grid;grid-template-columns: repeat(2, 1fr);gap:15px;}
 
-.card{background:#fff;border-radius:18px;padding:12px;border:1px solid #e0e0e0;display:flex;flex-direction:column;align-items:center;text-align:center;transition:0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
-.card:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(255,107,0,0.15);border-color:#ff6b00;}
-.card img{width:100%;height:100px;object-fit:contain;background:#f5f7fa;border-radius:12px;padding:6px;margin-bottom:10px;}
-.card h3{font-size:12px;font-weight:700;margin-bottom:8px;color:#333;min-height:32px;}
-.price{font-size:16px;font-weight:800;color:#ff6b00;margin-bottom:10px;}
-.price span{font-size:11px;color:#777;font-weight:600;margin-left:2px;}
+.card{background:#121a2b;border-radius:18px;padding:12px;border:1px solid #2a3a50;display:flex;flex-direction:column;align-items:center;text-align:center;transition:0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.card:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(0,123,255,0.2);border-color:#007bff;}
+.card img{width:100%;height:100px;object-fit:contain;background:#1a2333;border-radius:12px;padding:6px;margin-bottom:10px;}
+.card h3{font-size:12px;font-weight:700;margin-bottom:8px;color:#ddd;min-height:32px;}
+.price{font-size:16px;font-weight:800;color:#007bff;margin-bottom:10px;}
+.price span{font-size:11px;color:#aaa;font-weight:600;margin-left:2px;}
 
 .qty-control{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;}
-.qty-btn{width:30px;height:30px;background:#f5f7fa;border:1px solid #ddd;border-radius:8px;color:#222;font-size:18px;font-weight:700;cursor:pointer;}
-.qty{font-weight:700;font-size:15px;min-width:20px;text-align:center;color:#222;}
+.qty-btn{width:30px;height:30px;background:#1a2333;border:1px solid #2a3a50;border-radius:8px;color:#fff;font-size:18px;font-weight:700;cursor:pointer;}
+.qty{font-weight:700;font-size:15px;min-width:20px;text-align:center;color:#fff;}
 
-.cart-bar{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);background:#fff;padding:12px 20px;border-radius:50px;display:none;align-items:center;gap:15px;border:2px solid #ff6b00;box-shadow:0 5px 20px rgba(255,107,0,0.2);z-index:999;width:90%;max-width:500px;}
+.cart-bar{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);background:#121a2b;padding:12px 20px;border-radius:50px;display:none;align-items:center;gap:15px;border:2px solid #007bff;box-shadow:0 5px 20px rgba(0,123,255,0.2);z-index:999;width:90%;max-width:500px;}
 .cart-bar.active{display:flex;}
-.cart-info{flex:1;font-size:14px;color:#222;}
-.cart-total{font-weight:800;color:#ff6b00;font-size:16px;}
-.checkout-btn{padding:12px 22px;background:linear-gradient(90deg, #ff6b00, #ff8a00);border:none;border-radius:30px;color:#fff;font-weight:700;cursor:pointer;font-size:14px;}
+.cart-info{flex:1;font-size:14px;color:#fff;}
+.cart-total{font-weight:800;color:#007bff;font-size:16px;}
+.checkout-btn{padding:12px 22px;background:linear-gradient(90deg, #007bff, #00a0ff);border:none;border-radius:30px;color:#fff;font-weight:700;cursor:pointer;font-size:14px;}
 
 .page-title{text-align:center;margin-bottom:25px;padding-top:10px;}
-.page-title h1{font-size:28px;font-weight:800;color:#ff6b00;}
-.page-title p{color:#777;font-size:13px;margin-top:6px}
+.page-title h1{font-size:28px;font-weight:800;color:#007bff;}
+.page-title p{color:#aaa;font-size:13px;margin-top:6px}
 
 /* TOAST MESSAGE */
-.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#3fb950;color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;display:none;z-index:10001;}
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#00a86b;color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;display:none;z-index:10001;}
 .toast.show{display:block;animation:fadeInOut 2s;}
 @keyframes fadeInOut{0%{opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{opacity:0}}
 </style>
@@ -104,7 +105,7 @@ body{background:#f5f7fa;color:#222;}
       <button onclick="loginAdmin()">LOGIN</button>
     </div>
     <div id="adminPanel" style="display:none;">
-      <h3 style="color:#3fb950;margin-bottom:10px;">✅ Active - Price Edit</h3>
+      <h3 style="color:#00a86b;margin-bottom:10px;">✅ Active - Price Edit</h3>
       <div id="adminPriceList"></div>
     </div>
   </div>
@@ -133,7 +134,7 @@ body{background:#f5f7fa;color:#222;}
     <div class="offer-badge">20% OFF</div>
   </div>
   <div class="countdown">
-    <div class="time-item"><span class="time-num" id="hours">24</span><span class="time-label">HOURS</span></div>
+    <div class="time-item"><span class="time-num" id="hours">48</span><span class="time-label">HOURS</span></div>
     <div class="time-item"><span class="time-num" id="minutes">00</span><span class="time-label">MINUTES</span></div>
     <div class="time-item"><span class="time-num" id="seconds">00</span><span class="time-label">SECONDS</span></div>
   </div>
@@ -164,7 +165,7 @@ body{background:#f5f7fa;color:#222;}
 <!-- STEP 2 - PACKAGES -->
 <div id="packageSection">
 <div class="step-title"><div class="step-number">2</div> Select Package</div>
-<div id="packages"></div>
+<div id="packages">Loading from Firebase...</div>
 </div>
 
 </div>
@@ -175,26 +176,23 @@ body{background:#f5f7fa;color:#222;}
 <button class="checkout-btn" onclick="goToCheckout()">NEXT →</button>
 </div>
 
-<!-- FIREBASE SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+<!-- FIREBASE SDK v8 -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
 <script>
-// FIREBASE CONFIG
+// OYAGE FIREBASE CONFIG
 const firebaseConfig = {
-  apiKey: "AIzaSyCAp_X7c6OTwQJ79VLo5dn15kGUDo4FKXQ",
-  authDomain: "yasitopup-3a648.firebaseapp.com",
-  databaseURL: "https://yasitopup-3a648-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "yasitopup-3a648",
-  storageBucket: "yasitopup-3a648.firebasestorage.app",
-  messagingSenderId: "708531417030",
-  appId: "1:708531417030:web:650ec9f7e9520f8bd24cc7",
-  measurementId: "G-C25VLDZG6X"
+  apiKey: "AIzaSyDMqxidSbWo2EfRjn9LWaAzx8N-S0_kExI",
+  authDomain: "shashiyatopup.firebaseapp.com",
+  databaseURL: "https://shashiyatopup-default-rtdb.firebaseio.com",
+  projectId: "shashiyatopup",
+  storageBucket: "shashiyatopup.firebasestorage.app",
+  messagingSenderId: "493513971401",
+  appId: "1:493513971401:web:4e7d7c306b32ca8e4f5f18"
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 const db = firebase.database();
 
 let cart = [];
@@ -202,8 +200,8 @@ let verified = false;
 let packagesData = [];
 let totalSeconds = 48 * 60 * 60;
 
-// ADMIN PASSWORD
-const ADMIN_PASSWORD = "Yasiya295@";
+// ADMIN PASSWORD WENAS KALA
+const ADMIN_PASSWORD = "Shashiya789@";
 
 window.onload = function(){
 loadPricesFromFirebase();
@@ -217,12 +215,12 @@ db.ref('prices').once('value').then(snapshot => {
   if(data){
     packagesData = data;
   } else {
-    // Pahala default data eka. Pahala database eke na nam meka save wei
+    // DEFAULT DATA - PAHALA NATHNAM MEKA SAVE WEI
     packagesData = [
-      {title:"MEMBERSHIP", items:[["WEEKLY LITE MEMBERSHIP",150,"IMG_3090.png"],["WEEKLY MEMBERSHIP",595,"IMG_3092.png"],["MONTHLY MEMBERSHIP",2780,"IMG_3091.png"],["VIP MEMBERSHIP",3375,"IMG_3094.webp"],["VIP MAX MEMBERSHIP",10125,"IMG_3094.webp"],["S VIP MEMBERSHIP",5160,"IMG_3094.webp"],["S VIP PLUS MEMBERSHIP",5770,"IMG_3094.webp"]]},
-      {title:"DIAMOND PACK", items:[["25 💎",150,"IMG_3089.webp"],["50 💎",300,"IMG_3089.webp"],["100 💎",350,"IMG_3089.webp"],["310 💎",960,"IMG_3089.webp"],["520 💎",1730,"IMG_3089.webp"],["1060 💎",3510,"IMG_3089.webp"],["2180 💎",6590,"IMG_3089.webp"],["5600 💎",17060,"IMG_3089.webp"],["11500 💎",34090,"IMG_3089.webp"],["23000 💎",68180,"IMG_3089.webp"],["46000 💎",136360,"IMG_3089.webp"]]},
-      {title:"LEVEL UP PASS PACKAGE", items:[["LEVEL 6",150,"IMG_3101.jpeg"],["LEVEL 10",260,"IMG_3101.jpeg"],["LEVEL 15",260,"IMG_3101.jpeg"],["LEVEL 20",260,"IMG_3101.jpeg"],["LEVEL 25",260,"IMG_3101.jpeg"],["LEVEL 30",400,"IMG_3101.jpeg"]]},
-      {title:"EVO ACCESS PACKAGE", items:[["EVO ACCESS — 3 DAY",225,"IMG_3100.webp"],["EVO ACCESS — 7 DAY",295,"IMG_3100.webp"],["EVO ACCESS — 30 DAY",870,"IMG_3100.webp"]]}
+      {title:"MEMBERSHIP", items:[["WEEKLY LITE MEMBERSHIP",130,"IMG_3090.png"],["WEEKLY MEMBERSHIP",590,"IMG_3092.png"],["MONTHLY MEMBERSHIP",2950,"IMG_3091.png"],["VIP MEMBERSHIP",3540,"IMG_3094.webp"],["VIP PLUS MEMBERSHIP",3670,"IMG_3094.webp"],["S VIP MEMBERSHIP",5310,"IMG_3094.webp"],["S VIP PLUS MEMBERSHIP",5830,"IMG_3094.webp"]]},
+      {title:"DIAMOND PACK", items:[["25 💎",100,"IMG_3089.webp"],["50 💎",200,"IMG_3089.webp"],["100 💎",400,"IMG_3089.webp"],["310 💎",1030,"IMG_3089.webp"],["520 💎",1720,"IMG_3089.webp"],["1060 💎",3380,"IMG_3089.webp"],["2180 💎",6840,"IMG_3089.webp"],["5600 💎",16930,"IMG_3089.webp"],["11500 💎",34880,"IMG_3089.webp"],["23000 💎",69760,"IMG_3089.webp"],["46000 💎",139520,"IMG_3089.webp"]]},
+      {title:"LEVEL UP PASS PACKAGE", items:[["LEVEL 6",180,"IMG_3101.jpeg"],["LEVEL 10",300,"IMG_3101.jpeg"],["LEVEL 15",300,"IMG_3101.jpeg"],["LEVEL 20",300,"IMG_3101.jpeg"],["LEVEL 25",300,"IMG_3101.jpeg"],["LEVEL 30",400,"IMG_3101.jpeg"]]},
+      {title:"EVO ACCESS PACKAGE", items:[["EVO ACCESS — 3 DAY",200,"IMG_3100.webp"],["EVO ACCESS — 7 DAY",350,"IMG_3100.webp"],["EVO ACCESS — 30 DAY",900,"IMG_3100.webp"]]}
     ];
     db.ref('prices').set(packagesData);
   }
@@ -231,7 +229,7 @@ db.ref('prices').once('value').then(snapshot => {
 });
 }
 
-// REALTIME PRICE UPDATE
+// REALTIME PRICE UPDATE - ALL DEVICE
 db.ref('prices').on('value', snapshot => {
   const data = snapshot.val();
   if(data){
@@ -354,11 +352,11 @@ function loginAdmin(){
 function loadAdminPanel(){
   let html = '';
   packagesData.forEach((pkg, pIndex) => {
-    html += `<h4 style="margin-top:15px;color:#222;">${pkg.title}</h4>`;
+    html += `<h4 style="margin-top:15px;color:#007bff;">${pkg.title}</h4>`;
     pkg.items.forEach((item, iIndex) => {
       html += `
       <div class="admin-item">
-        <span style="font-size:12px;">${item[0]}</span>
+        <span>${item[0]}</span>
         <div>
           Rs.<input type="number" id="price-${pIndex}-${iIndex}" value="${item[1]}">
           <button onclick="updatePrice(${pIndex}, ${iIndex})">Update</button>
